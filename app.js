@@ -2,6 +2,8 @@
   const USER = "justturuu";
   const EMAIL = "Turbold2019@gmail.com";
   const GITHUB = "https://github.com/JustTuruu";
+  const INSTAGRAM = "https://www.instagram.com/justturuu/";
+  const FACEBOOK = "https://www.facebook.com/turbold.turuu.148";
 
   const app = document.getElementById("app");
   const screen = document.getElementById("screen");
@@ -128,6 +130,8 @@ or open pages > about.`,
       path: `C:\\Users\\${USER}\\socials`,
       items: [
         { label: "GitHub", icon: "💻", href: GITHUB },
+        { label: "Instagram", icon: "📸", href: INSTAGRAM },
+        { label: "Facebook", icon: "📘", href: FACEBOOK },
         { label: "Email", icon: "✉️", href: `mailto:${EMAIL}` },
       ],
     },
@@ -400,6 +404,8 @@ or open pages > about.`,
       <h2>socials</h2>
       <ul>
         <li><a href="${GITHUB}" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="${INSTAGRAM}" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="${FACEBOOK}" target="_blank" rel="noopener">Facebook</a></li>
         <li><a href="mailto:${EMAIL}">Email</a></li>
       </ul>`,
       );
