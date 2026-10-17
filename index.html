@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JUSTTURUU - Oyun-Ukhaan Turbold</title>
+    <meta
+      name="description"
+      content="Oyun-Ukhaan Turbold — backend & full-stack developer based in Ulaanbaatar, Mongolia."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="tv-screen" id="screen">
+      <canvas class="stars" id="stars" aria-hidden="true"></canvas>
+      <div class="tv-content" id="app"></div>
+      <canvas class="tv-static" id="static" aria-hidden="true"></canvas>
+      <div class="tv-beam" id="beam" aria-hidden="true"></div>
+      <div class="tv-flash" id="flash" aria-hidden="true"></div>
+    </div>
+    <div class="tv-flicker" aria-hidden="true"></div>
+    <div class="tv-scanlines" aria-hidden="true"></div>
+    <div class="tv-border" aria-hidden="true">
+      <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+        <defs>
+          <!-- screen opening: rounded corners, edges bowed outward like curved glass -->
+          <path
+            id="glass"
+            d="M100,125 Q502,112 905,125 Q935,125 935,162 Q945,517 935,872 Q935,910 905,910 Q502,922 100,910 Q70,910 70,872 Q60,517 70,162 Q70,125 100,125 Z"
+          />
+          <mask
+            id="cutout"
+            maskUnits="userSpaceOnUse"
+            x="0"
+            y="0"
+            width="1000"
+            height="1000"
+          >
+            <rect width="1000" height="1000" fill="#fff" />
+            <use href="#glass" fill="#000" />
+          </mask>
+          <linearGradient id="case" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#a7a283" />
+            <stop offset="1" stop-color="#8b8666" />
+          </linearGradient>
+          <linearGradient id="face-top" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#7a7454" />
+            <stop offset="1" stop-color="#5b5539" />
+          </linearGradient>
+          <linearGradient id="face-left" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#857f5e" />
+            <stop offset="1" stop-color="#686244" />
+          </linearGradient>
+          <linearGradient id="face-right" x1="1" y1="0" x2="0" y2="0">
+            <stop offset="0" stop-color="#aaa585" />
+            <stop offset="1" stop-color="#bdb897" />
+          </linearGradient>
+          <linearGradient id="face-bottom" x1="0" y1="1" x2="0" y2="0">
+            <stop offset="0" stop-color="#9f9a79" />
+            <stop offset="1" stop-color="#b3ae8c" />
+          </linearGradient>
+          <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.62">
+            <stop offset="0.72" stop-color="#000" stop-opacity="0" />
+            <stop offset="0.93" stop-color="#000" stop-opacity="0.12" />
+            <stop offset="1" stop-color="#000" stop-opacity="0.38" />
+          </radialGradient>
+          <linearGradient id="glare" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#fff" stop-opacity="0.1" />
+            <stop offset="0.25" stop-color="#fff" stop-opacity="0" />
+          </linearGradient>
+        </defs>
+
+        <g mask="url(#cutout)">
+          <!-- outer case with a thin raised rim -->
+          <rect width="1000" height="1000" fill="url(#case)" />
+          <rect
+            x="4"
+            y="6"
+            width="992"
+            height="988"
+            fill="none"
+            stroke="#c4bf9e"
+            stroke-width="2"
+            vector-effect="non-scaling-stroke"
+          />
+          <!-- four bevelled walls sloping into the screen -->
+          <polygon points="20,40 980,40 935,125 70,125" fill="url(#face-top)" />
+          <polygon points="20,40 70,125 70,910 20,972" fill="url(#face-left)" />
+          <polygon
+            points="980,40 980,972 935,910 935,125"
+            fill="url(#face-right)"
+          />
+          <polygon
+            points="20,972 980,972 935,910 70,910"
+            fill="url(#face-bottom)"
+          />
+          <!-- creases where the walls meet -->
+          <g
+            stroke="#4a4530"
+            stroke-opacity="0.45"
+            stroke-width="1"
+            vector-effect="non-scaling-stroke"
+          >
+            <line x1="20" y1="40" x2="70" y2="125" />
+            <line x1="980" y1="40" x2="935" y2="125" />
+            <line x1="20" y1="972" x2="70" y2="910" />
+            <line x1="980" y1="972" x2="935" y2="910" />
+          </g>
+          <rect
+            x="20"
+            y="40"
+            width="960"
+            height="932"
+            fill="none"
+            stroke="#4a4530"
+            stroke-opacity="0.5"
+            stroke-width="2"
+            vector-effect="non-scaling-stroke"
+          />
+        </g>
+
+        <!-- glass shading and the dark rubber seal around it -->
+        <use href="#glass" fill="url(#vignette)" />
+        <use href="#glass" fill="url(#glare)" />
+        <use
+          href="#glass"
+          fill="none"
+          stroke="#2a2617"
+          stroke-width="3"
+          vector-effect="non-scaling-stroke"
+        />
+      </svg>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
