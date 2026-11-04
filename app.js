@@ -67,6 +67,29 @@ in production:
   streamed the Naadam opening ceremony and wrestling
   matches live in 360°.`,
     },
+    kidscare: {
+      title: "kidscare.txt",
+      body: `KIDSCARE MN — Freelance
+https://www.kidscare.click
+
+- Website for KidsCareMN, the official Mongolian
+  distributor of OralGos® kids' oral care products.
+- Product pages for the electric toothbrushes and
+  toothpaste, an about page, and a link through to the
+  online store for orders.
+
+stack: Next.js`,
+    },
+    kiosk: {
+      title: "coca-cola-kiosk.txt",
+      body: `COCA-COLA MUSEUM — Freelance
+face swap kiosk
+
+- Kiosk app for the Coca-Cola museum that swaps a
+  visitor's face into a photo.
+
+stack: Next.js`,
+    },
     cv: {
       title: "cv.pdf",
       body: `OYUN-UKHAAN TURBOLD
@@ -80,6 +103,11 @@ EDUCATION
 EXPERIENCE
   Erxes Inc ............ Backend Developer   (7 mo)
   Grand Ember Group .... Full-stack Developer (6 mo)
+
+FREELANCE
+  KidsCare MN .......... website, Next.js
+                         kidscare.click
+  Coca-Cola Museum ..... face swap kiosk, Next.js
 
 SKILLS
   TypeScript, Node.js, Express, NestJS, Spring Boot,
@@ -124,6 +152,8 @@ or open pages > about.`,
       items: [
         { label: "360 Stadium", icon: "🏟️", file: "stadium" },
         { label: "Erxes Tourism", icon: "🧳", file: "erxes" },
+        { label: "KidsCare", icon: "🪥", file: "kidscare" },
+        { label: "Coca-Cola Kiosk", icon: "🥤", file: "kiosk" },
       ],
     },
     socials: {
@@ -294,10 +324,10 @@ or open pages > about.`,
         "about",
         `
       <h2>whoami</h2>
-      <p>I'm <span class="hl">Oyun-Ukhaan Turbold</span>, also known as <span class="hl">${USER.toUpperCase()}</span> — a backend and full-stack developer based in Ulaanbaatar, Mongolia.</p>
+      <p>I'm <span class="hl">Oyun-Ukhaan Turbold</span>, a backend and full-stack developer based in Ulaanbaatar, Mongolia.</p>
 
       <h2>background</h2>
-      <p>Final-year Software Engineering student at MUST (School of ICT), graduating June 2027. I've worked on real production systems: backend at <span class="hl">Erxes Inc</span>, and the web platform, payment integrations and 360° live streaming for the <span class="hl">360 Stadium</span> project at Grand Ember Group.</p>
+      <p>Final-year Software Engineering student at MUST (School of ICT), graduating June 2027. I've worked on real production systems: backend at <span class="hl">Erxes Inc</span>, and the web platform, payment integrations and 360° live streaming for the <span class="hl">360 Stadium</span> project at Grand Ember Group. On the side I take freelance work in Next.js, such as the <span class="hl">KidsCare MN</span> website and a face swap kiosk for the <span class="hl">Coca-Cola museum</span>.</p>
 
       <h2>interests</h2>
       <ul>
@@ -343,6 +373,22 @@ or open pages > about.`,
             <li>Microservice architecture in production</li>
           </ul>
           <div class="tags"><span class="tag">TypeScript</span><span class="tag">GraphQL</span><span class="tag">MongoDB</span><span class="tag">Microservices</span></div>
+        </div>
+      </div>
+
+      <h2>freelance</h2>
+      <div class="terminal-grid">
+        <div class="terminal-card">
+          <div class="terminal-card-title">KidsCare MN</div>
+          <div class="meta">Website · <a href="https://www.kidscare.click" target="_blank" rel="noopener">kidscare.click</a></div>
+          <p>Website for the official Mongolian distributor of OralGos® kids' oral care products: product pages, about page and a link through to the online store.</p>
+          <div class="tags"><span class="tag">Next.js</span></div>
+        </div>
+        <div class="terminal-card">
+          <div class="terminal-card-title">Coca-Cola Museum</div>
+          <div class="meta">Face swap kiosk</div>
+          <p>Kiosk app for the Coca-Cola museum that swaps a visitor's face into a photo.</p>
+          <div class="tags"><span class="tag">Next.js</span></div>
         </div>
       </div>
 
@@ -448,7 +494,11 @@ or open pages > about.`,
   }
 
   const kindOf = (path) =>
-    path === "" ? "landing" : /^home(\/\w+)?$/.test(path) ? "explorer" : "terminal";
+    path === ""
+      ? "landing"
+      : /^home(\/\w+)?$/.test(path)
+        ? "explorer"
+        : "terminal";
 
   const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const beam = document.getElementById("beam");
@@ -472,14 +522,16 @@ or open pages > about.`,
       [{ opacity: 0 }, { opacity: 0.85, offset: 0.55 }, { opacity: 0 }],
       { duration: 300, easing: "ease-in" },
     );
-    return app.animate(
-      [
-        { transform: "scale(1, 1)" },
-        { transform: "scale(1, 0.006)", offset: 0.55 },
-        { transform: "scale(0, 0.006)" },
-      ],
-      { duration: 300, easing: "cubic-bezier(.7,0,.9,.4)", fill: "forwards" },
-    ).finished.catch(() => {});
+    return app
+      .animate(
+        [
+          { transform: "scale(1, 1)" },
+          { transform: "scale(1, 0.006)", offset: 0.55 },
+          { transform: "scale(0, 0.006)" },
+        ],
+        { duration: 300, easing: "cubic-bezier(.7,0,.9,.4)", fill: "forwards" },
+      )
+      .finished.catch(() => {});
   }
 
   // a line flashes across, then the picture opens vertically and settles
@@ -515,7 +567,8 @@ or open pages > about.`,
 
   // TV snow with a rolling bar, drawn at low resolution and scaled up
   function snow(ms) {
-    const w = 160, h = 110;
+    const w = 160,
+      h = 110;
     staticCanvas.width = w;
     staticCanvas.height = h;
     const ctx = staticCanvas.getContext("2d");
