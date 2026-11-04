@@ -2,6 +2,7 @@
   const USER = "justturuu";
   const EMAIL = "Turbold2019@gmail.com";
   const GITHUB = "https://github.com/JustTuruu";
+  const LINKEDIN = "https://www.linkedin.com/in/turbold-oyun-ukhaan-0491a5372/";
   const INSTAGRAM = "https://www.instagram.com/justturuu/";
   const FACEBOOK = "https://www.facebook.com/turbold.turuu.148";
 
@@ -27,7 +28,7 @@
     erxes: {
       title: "erxes-tourism.txt",
       body: `ERXES INC — Backend Developer
-duration: 7 months
+Oct 2025 – May 2026
 
 - Joined as an intern and helped migrate erxes from
   version 2 to version 3.
@@ -48,7 +49,7 @@ stack: TypeScript, Node.js, GraphQL (Apollo), MongoDB`,
     stadium: {
       title: "360-stadium.txt",
       body: `GRAND EMBER GROUP — Full-stack Developer
-duration: 6 months
+Oct 2025 – May 2026
 
 360 STADIUM — Central Stadium, Ulaanbaatar
 - A website that streams live 360° camera video.
@@ -80,49 +81,54 @@ https://www.kidscare.click
 
 stack: Next.js`,
     },
+    pos: {
+      title: "pos-system.txt",
+      body: `POS SYSTEM — University project
+https://github.com/JustTuruu/POS-system
+
+Offline-first, distributed point of sale for a chain
+with several branches and several tills per branch.
+
+- Each till keeps working with no network: sales go to
+  a local SQLite database and sync to the branch server
+  when the connection comes back.
+- Sales are pushed to the branch right after checkout;
+  anything that failed is retried in a nightly batch.
+- Products, barcodes, categories, prices and discount
+  rules; a price change publishes an event (Observer).
+- Cash, card and QPay payments, picked at runtime
+  (Strategy).
+- Sales table partitioned by month in PostgreSQL.
+- No duplicate or lost sales under concurrency: UUID
+  idempotency keys + SELECT ... FOR UPDATE locking.
+- Branch sync runs in parallel on a thread pool (25)
+  with CompletableFuture.allOf().
+- k6 load test: 125 tills across 25 branches,
+  238 req/s with a 0% error rate.
+
+stack: Java 17, Spring Boot, Spring Data JPA,
+       PostgreSQL, SQLite, Docker, k6`,
+    },
     kiosk: {
       title: "coca-cola-kiosk.txt",
       body: `COCA-COLA MUSEUM — Freelance
-face swap kiosk
+AI face swap photo kiosk · Sep – Oct 2026
 
-- Kiosk app for the Coca-Cola museum that swaps a
-  visitor's face into a photo.
+Offline photo kiosk on a 55" portrait touchscreen. A
+visitor picks a character, the camera takes a burst,
+and their face is swapped into the artwork on the GPU.
+They scan a QR code to download it over the kiosk's own
+Wi-Fi. No cloud, no internet.
 
-stack: Next.js`,
-    },
-    cv: {
-      title: "cv.pdf",
-      body: `TURBOLD OYUN-UKHAAN
-Backend / Full-stack Developer — Ulaanbaatar, Mongolia
-${EMAIL} · github.com/JustTuruu
+my part (built with one other developer):
+- Kiosk UI: the "Atlanta, 1886" themed screens, from the
+  idle broadside to character select.
+- Admin panel: managing the templates and pictures shown
+  on the kiosk, adding and combining pictures.
+- Spoken guidance: a voice clip per screen, uploaded
+  from the admin panel.
 
-EDUCATION
-  MUST (ШУТИС), School of ICT
-  B.Sc. Software Engineering — graduating June 2027
-
-EXPERIENCE
-  Erxes Inc ............ Backend Developer   (7 mo)
-  Grand Ember Group .... Full-stack Developer (6 mo)
-
-FREELANCE
-  KidsCare MN .......... website, Next.js
-                         kidscare.click
-  Coca-Cola Museum ..... face swap kiosk, Next.js
-
-SKILLS
-  TypeScript, Node.js, Express, NestJS, Spring Boot,
-  REST, Apollo GraphQL, Next.js, Flutter
-  PostgreSQL, MongoDB/Mongoose, SQL & NoSQL
-  AWS, Cloudflare, Vercel, Git workflow
-  Auth, secrets & env management
-  Race conditions, high concurrency,
-  distributed systems
-  macOS, Windows, Linux/Ubuntu, SSH
-
-AI TOOLING
-  Claude Code, Codex — writing code and unit tests,
-  debugging, refactoring, researching solutions;
-  every result is reviewed and adapted to the project.`,
+stack: Python, PySide6, PyTorch, pytest`,
     },
     readme: {
       title: "readme.txt",
@@ -144,7 +150,7 @@ or open pages > about.`,
         { label: "socials", icon: "📁", to: "#/home/socials" },
         { label: "pages", icon: "📁", to: "#/home/pages" },
         { label: "readme.txt", icon: "📝", file: "readme" },
-        { label: "cv.pdf", icon: "📄", file: "cv" },
+        { label: "cv.pdf", icon: "📄", href: "cv.pdf" },
       ],
     },
     projects: {
@@ -154,12 +160,14 @@ or open pages > about.`,
         { label: "Erxes Tourism", icon: "🧳", file: "erxes" },
         { label: "KidsCare", icon: "🪥", file: "kidscare" },
         { label: "Coca-Cola Kiosk", icon: "🥤", file: "kiosk" },
+        { label: "POS System", icon: "🧾", file: "pos" },
       ],
     },
     socials: {
       path: `C:\\Users\\${USER}\\socials`,
       items: [
         { label: "GitHub", icon: "💻", href: GITHUB },
+        { label: "LinkedIn", icon: "💼", href: LINKEDIN },
         { label: "Instagram", icon: "📸", href: INSTAGRAM },
         { label: "Facebook", icon: "📘", href: FACEBOOK },
         { label: "Email", icon: "✉️", href: `mailto:${EMAIL}` },
@@ -327,7 +335,7 @@ or open pages > about.`,
       <p>I'm <span class="hl">Oyun-Ukhaan Turbold</span>, a backend and full-stack developer based in Ulaanbaatar, Mongolia.</p>
 
       <h2>background</h2>
-      <p>Final-year Software Engineering student at MUST (School of ICT), graduating June 2027. I've worked on real production systems: backend at <span class="hl">Erxes Inc</span>, and the web platform, payment integrations and 360° live streaming for the <span class="hl">360 Stadium</span> project at Grand Ember Group. On the side I take freelance work in Next.js, such as the <span class="hl">KidsCare MN</span> website and a face swap kiosk for the <span class="hl">Coca-Cola museum</span>.</p>
+      <p>Final-year Software Engineering student at MUST (School of ICT), graduating June 2027. I've worked on real production systems: backend at <span class="hl">Erxes Inc</span>, and the web platform, payment integrations and 360° live streaming for the <span class="hl">360 Stadium</span> project at Grand Ember Group. On the side I take freelance work, such as the <span class="hl">KidsCare MN</span> website in Next.js and an offline AI face swap kiosk for the <span class="hl">Coca-Cola museum</span>.</p>
 
       <h2>interests</h2>
       <ul>
@@ -350,7 +358,7 @@ or open pages > about.`,
       <div class="terminal-grid">
         <div class="terminal-card">
           <div class="terminal-card-title">Grand Ember Group</div>
-          <div class="meta">Full-stack Developer · 6 months</div>
+          <div class="meta">Full-stack Developer · Oct 2025 – May 2026</div>
           <p>360 Stadium: live 360° camera streaming website and kiosk ticketing with QR entry for the Central Stadium.</p>
           <ul>
             <li>System architecture & core development</li>
@@ -363,7 +371,7 @@ or open pages > about.`,
         </div>
         <div class="terminal-card">
           <div class="terminal-card-title">Erxes Inc</div>
-          <div class="meta">Backend Developer · 7 months</div>
+          <div class="meta">Backend Developer · Oct 2025 – May 2026</div>
           <p>Joined as an intern and moved up to main backend developer on the Tourism team.</p>
           <ul>
             <li>Migrated erxes v2 → v3</li>
@@ -385,10 +393,31 @@ or open pages > about.`,
         </div>
         <div class="terminal-card">
           <div class="terminal-card-title">Coca-Cola Museum</div>
-          <div class="meta">Face swap kiosk</div>
-          <p>Kiosk app for the Coca-Cola museum that swaps a visitor's face into a photo.</p>
-          <div class="tags"><span class="tag">Next.js</span></div>
+          <div class="meta">AI face swap kiosk · Sep – Oct 2026</div>
+          <p>Offline photo kiosk on a 55" touchscreen: a visitor's face is swapped into a character artwork on the GPU and downloaded by QR over the kiosk's own Wi-Fi. Built with one other developer.</p>
+          <ul>
+            <li>Kiosk UI: the "Atlanta, 1886" themed screens</li>
+            <li>Admin panel for the templates and pictures on the kiosk</li>
+            <li>Spoken guidance per screen, managed from the admin</li>
+          </ul>
+          <div class="tags"><span class="tag">Python</span><span class="tag">PySide6</span><span class="tag">PyTorch</span></div>
         </div>
+      </div>
+
+      <h2>projects</h2>
+      <div class="terminal-card">
+        <div class="terminal-card-title">POS System</div>
+        <div class="meta">University project · <a href="https://github.com/JustTuruu/POS-system" target="_blank" rel="noopener">GitHub</a></div>
+        <p>Offline-first, distributed point of sale for a multi-branch chain. Tills keep selling without a network on local SQLite and sync to the branch server when it comes back.</p>
+        <ul>
+          <li>Real-time sync after each sale, nightly batch retry for failures</li>
+          <li>Products, barcodes, prices and discount rules; price changes publish events (Observer)</li>
+          <li>Cash, card and QPay payments chosen at runtime (Strategy)</li>
+          <li>UUID idempotency + SELECT FOR UPDATE: no duplicate sales under concurrency</li>
+          <li>Parallel branch sync on a thread pool with CompletableFuture</li>
+          <li>k6: 125 tills across 25 branches, 238 req/s at 0% errors</li>
+        </ul>
+        <div class="tags"><span class="tag">Java 17</span><span class="tag">Spring Boot</span><span class="tag">PostgreSQL</span><span class="tag">SQLite</span><span class="tag">Docker</span><span class="tag">k6</span></div>
       </div>
 
       <h2>education</h2>
@@ -449,9 +478,11 @@ or open pages > about.`,
       <h2>socials</h2>
       <ul>
         <li><a href="${GITHUB}" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="${LINKEDIN}" target="_blank" rel="noopener">LinkedIn</a></li>
         <li><a href="${INSTAGRAM}" target="_blank" rel="noopener">Instagram</a></li>
         <li><a href="${FACEBOOK}" target="_blank" rel="noopener">Facebook</a></li>
         <li><a href="mailto:${EMAIL}">Email</a></li>
+        <li><a href="cv.pdf" target="_blank" rel="noopener">CV (PDF)</a></li>
       </ul>`,
       );
       document.getElementById("contact").addEventListener("submit", (e) => {
