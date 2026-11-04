@@ -92,7 +92,7 @@ stack: Next.js`,
     },
     cv: {
       title: "cv.pdf",
-      body: `OYUN-UKHAAN TURBOLD
+      body: `TURBOLD OYUN-UKHAAN
 Backend / Full-stack Developer — Ulaanbaatar, Mongolia
 ${EMAIL} · github.com/JustTuruu
 
@@ -331,11 +331,10 @@ or open pages > about.`,
 
       <h2>interests</h2>
       <ul>
-        <li>Backend & API development</li>
-        <li>Microservices & distributed systems</li>
-        <li>High concurrency & race conditions</li>
-        <li>Live streaming & media delivery</li>
-        <li>AI tools for developer productivity</li>
+        <li>Systems that run in the physical world: kiosks, ticket gates, payment terminals — software someone touches in person</li>
+        <li>Live video at scale: getting a 360° stream from a stadium to thousands of phones without it falling over</li>
+        <li>Payments that have to be right: QPay, POS, E-Barimt — where a bug means someone's money</li>
+        <li>Multi-tenant SaaS design, after working on erxes</li>
       </ul>
 
       <h2>current_focus</h2>
