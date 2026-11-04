@@ -49,7 +49,7 @@ stack: TypeScript, Node.js, GraphQL (Apollo), MongoDB`,
     stadium: {
       title: "360-stadium.txt",
       body: `GRAND EMBER GROUP — Full-stack Developer
-Oct 2025 – May 2026
+May 2026 – Present
 
 360 STADIUM — Central Stadium, Ulaanbaatar
 - A website that streams live 360° camera video.
@@ -358,7 +358,7 @@ or open pages > about.`,
       <div class="terminal-grid">
         <div class="terminal-card">
           <div class="terminal-card-title">Grand Ember Group</div>
-          <div class="meta">Full-stack Developer · Oct 2025 – May 2026</div>
+          <div class="meta">Full-stack Developer · May 2026 – Present</div>
           <p>360 Stadium: live 360° camera streaming website and kiosk ticketing with QR entry for the Central Stadium.</p>
           <ul>
             <li>System architecture & core development</li>
