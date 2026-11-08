@@ -368,6 +368,13 @@ or open pages > about.`,
             <li>Streamed Naadam opening & wrestling live</li>
           </ul>
           <div class="tags"><span class="tag">QPay</span><span class="tag">E-Barimt</span><span class="tag">Wowza</span><span class="tag">AWS S3</span><span class="tag">CDN</span></div>
+          <h3>Uziy · Rewarded-video platform</h3>
+          <div class="meta">Core platform developed; not yet deployed</div>
+          <ul>
+            <li>Built a Flutter viewer app, React advertiser/admin console and Spring Boot API for targeted ads and surveys.</li>
+            <li>Implemented survey rewards, campaign budget updates, wallet and payout-request workflows, moderation and analytics.</li>
+          </ul>
+          <div class="tags">${tags("Java 17, Spring Boot, PostgreSQL, Flutter, React, TypeScript, Docker")}</div>
         </div>
         <div class="terminal-card">
           <div class="terminal-card-title">Erxes Inc</div>
@@ -388,7 +395,7 @@ or open pages > about.`,
         <div class="terminal-card">
           <div class="terminal-card-title">KidsCare MN</div>
           <div class="meta">Website · <a href="https://www.kidscare.click" target="_blank" rel="noopener">kidscare.click</a></div>
-          <p>Website for the official Mongolian distributor of OralGos® kids' oral care products: product pages, about page and a link through to the online store.</p>
+          <p>Built a product website for KidsCare MN.</p>
           <div class="tags"><span class="tag">Next.js</span></div>
         </div>
         <div class="terminal-card">
